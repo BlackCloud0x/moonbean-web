@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 25% 98%;
+    --foreground: 260 25% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 25% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 25% 11%;
+
+    --primary: 260 73% 40%;
+    --primary-foreground: 260 25% 98%;
+
+    --secondary: 260 25% 92%;
+    --secondary-foreground: 260 25% 11%;
+
+    --muted: 260 25% 92%;
+    --muted-foreground: 260 25% 40%;
+
+    --accent: 260 25% 92%;
+    --accent-foreground: 260 25% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 25% 90%;
+    --input: 260 25% 90%;
+    --ring: 260 25% 11%;
+
+    --radius: 0.5rem;
+
+    --chart-1: 260 73% 40%;
+    --chart-2: 220 70% 50%;
+    --chart-3: 280 70% 50%;
+    --chart-4: 320 70% 45%;
+  }
+
+  .dark {
+    --background: 230 40% 15%;
+    --foreground: 260 25% 98%;
+
+    --card: 230 40% 20%;
+    --card-foreground: 260 25% 98%;
+
+    --popover: 230 40% 20%;
+    --popover-foreground: 260 25% 98%;
+
+    --primary: 260 73% 60%;
+    --primary-foreground: 260 25% 11%;
+
+    --secondary: 230 40% 25%;
+    --secondary-foreground: 260 25% 98%;
+
+    --muted: 230 40% 25%;
+    --muted-foreground: 260 25% 70%;
+
+    --accent: 230 40% 25%;
+    --accent-foreground: 260 25% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 230 40% 25%;
+    --input: 230 40% 25%;
+    --ring: 260 25% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom background styles */
+.bg-stars {
+  background-color: #0c1445;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 3px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+}
+
+.bg-stars-gradient {
+  background: linear-gradient(to bottom, #0c1445 0%, #1e3a8a 100%);
+  position: relative;
+}
+
+.bg-stars-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 3px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  pointer-events: none;
+}
+
+.bg-purple-gradient {
+  background: linear-gradient(135deg, #4c1d95 0%, #7e22ce 50%, #8b5cf6 100%);
+}
+
+.bg-cosmic {
+  background: linear-gradient(to bottom, #0c1445 0%, #4c1d95 100%);
+  position: relative;
+}
+
+.bg-cosmic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px);
+  background-size: 550px 550px, 350px 350px;
+  background-position: 0 0, 40px 60px;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+.star-sm {
+  width: 1px;
+  height: 1px;
+}
+
+.star-md {
+  width: 2px;
+  height: 2px;
+}
+
+.star-lg {
+  width: 3px;
+  height: 3px;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.star:nth-child(odd) {
+  animation-delay: 2s;
+}
+
+.star:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+.star:nth-child(5n) {
+  animation-delay: 3s;
+}
+
+.star:nth-child(7n) {
+  animation-delay: 0.5s;
+}
+
